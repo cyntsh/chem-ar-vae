@@ -2,7 +2,7 @@
 ## About
 Adds a loss term that is computed as the difference between the distance matrix for latent vectors at regularized dimension and the distance matrix for the desired attribute (in this case logP).
 
-Code is adapted from the following repositories:
+Adapted from the following repositories:
 * [SELFIES](https://github.com/aspuru-guzik-group/selfies)
 * [AR-VAE: Attribute-based Regularization of VAE Latent Spaces](https://github.com/ashispati/ar-vae)
 
