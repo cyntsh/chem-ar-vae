@@ -3,8 +3,8 @@
 Adds a loss term that is computed as the difference between the distance matrix for latent vectors at regularized dimension and the distance matrix for the desired attribute (in this case logP).
 
 Code is adapted from the following repositories:
-* [SELFIES] (https://github.com/aspuru-guzik-group/selfies)
-* [AR-VAE: Attribute-based Regularization of VAE Latent Spaces] (https://github.com/ashispati/ar-vae)
+* [SELFIES](https://github.com/aspuru-guzik-group/selfies)
+* [AR-VAE: Attribute-based Regularization of VAE Latent Spaces](https://github.com/ashispati/ar-vae)
 
 ## Results
 The model seems to think that higher logP values are correlated with more carbon atoms, and lower logP values are correlated with more N atoms and double bonds. Some issues with disentanglement: dimension 0 is most correlated with dimensions 8 and 32, both of which seem to encode attributes relating to N, = vs C.
