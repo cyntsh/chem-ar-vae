@@ -1,0 +1,78 @@
+data:
+  batch_size: 100
+  smiles_file: VAE_dependencies/Datasets/0SelectedSMILES_QM9.txt
+  file_description: 'full'
+  type_of_encoding: 1
+  
+decoder:
+  latent_dimension: 50
+  gru_neurons_num: 500
+  gru_stack_size: 1
+  
+encoder:
+  layer_1d: 500
+  layer_2d: 500
+  layer_3d: 500
+  latent_dimension: 50
+  
+training_VAE:
+  latent_dimension: 50
+  KLD_alpha: 1.0e-05
+  lr_enc: 0.001
+  lr_dec: 0.001
+  num_epochs: 30
+  sample_num: 1000
+  use_reg_loss: True #version 4+ of VAE only; for version 6, this should be accompanied by num_properties = 1
+  
+training_BetaVAE:
+  latent_dimension: 50
+  beta: 6
+  lr_enc: 0.001
+  lr_dec: 0.001
+  num_epochs: 1000
+  sample_num: 1000
+  
+training_BetaTCVAE:
+  latent_dimension: 50
+  alpha: 1
+  beta: 1
+  gamma: 1
+  anneal_steps: 200
+  lr_enc: 0.1
+  lr_dec: 0.1
+  num_epochs: 1000
+  sample_num: 1000
+  
+plot:
+  plot_quality: True
+  plot_loss: True
+  plot_PCA: False
+  plot_tSNE: False
+  plot_UMAP: True
+  plot_latent: False
+  colour_dim: False #the UMAP and tSNE projections are labelled in colour based on dimension
+  colour_variance: False #the UMAP projection is labelled in colour based on dimensions of a particular variance
+                        #that is, only those points represented by molecules highest in a dimension are coloured
+                        #should be accompanied by evaluate_variance = True
+tSNE:
+  n_components: 2
+  perplexity: 30
+
+kmeans:
+  num_clusters: 30
+  
+evaluate:
+  evaluate_model: True # eval mode; interpret i.e. tsne and pca plots
+  evaluate_metrics: False #i.e. sampling, calculating quality
+  evaluate_variance: False # aims to find the dimensions/attributes responsible for the most variance in the dataset
+  evaluate_interp: False #interpolation analysis
+  evaluate_invariance: False #finds any dimensional invariances with respect to a change in other dimensions
+  evaluate_dim_v1: False #hihgest/lowest dimension analysis
+  evaluate_dim_v2: False #complete hierarchical dimension analysis
+  evaluate_dim_corr: False #correlation between dimensions
+  
+properties:
+  num_properties: 1 # The number of properties attached to each input molecules; for version 6, this should be accompanied by use_reg_loss = True
+  num_categories: 20
+  properties: ['CLogP']
+  
