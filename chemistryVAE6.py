@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #VERSION 6: Adds an optional regulation loss term to enforce logP to a single dimension so that there is a monotonic relationship
-#           Script is probably no longer functional because the 'import selfies' cannot find the correct selfies module; must import selfies0, which is updated in the next version        
+#           Reproduces code from the following paper by 
+#                 
         
 import os, sys, time
 import numpy as np
