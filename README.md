@@ -7,7 +7,7 @@ Adapted from the following repositories:
 * [AR-VAE: Attribute-based Regularization of VAE Latent Spaces](https://github.com/ashispati/ar-vae)
 
 ## Results
-The model seems to think that higher logP values are correlated with more carbon atoms, and lower logP values are correlated with more N atoms and double bonds. Some issues with disentanglement: dimension 0 is most correlated with dimensions 8 and 32, both of which seem to encode attributes relating to N, = vs C.
+Results suggest that higher logP values are correlated with more carbon atoms, and lower logP values are correlated with more N atoms and double bonds. Some issues with disentanglement: dimension 0 is most correlated with dimensions 8 and 32, both of which seem to encode attributes relating to N, = vs C.
 
 ## References
 * Ashis Pati, Alexander Lerch. "Attribute-based Regularization of Latent Spaces for Variational Auto-Encoders", Neural Computing and Applications. 2020.
